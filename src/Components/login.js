@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Card } from './context.js';
 
 export function Login(){
-    console.log('hello')
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [show, setShow] = React.useState(true);
