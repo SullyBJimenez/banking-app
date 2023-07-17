@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
-import { useBalance } from "./balance.js";
+import { useData } from "../useData.js";
 import { Card } from "./context.js";
 
 export function Deposit() {
   const {
     balance,
-    handleSubmit,
+    setBalance,
     deposit,
     setDeposit,
-    setBalance,
     show,
-    clearForm,
     isDepositDisabled,
-  } = useBalance(true);
+    handleSubmit,
+    clearForm,
+  } = useData(true);
   useEffect(() => {
-    setBalance(JSON.parse(localStorage.getItem("balance")));
-  });
+    setBalance(localStorage.getItem("balance"));
+  },);
+
   return (
     <Card
       bgcolor="primary"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { logOut } from '../logOut.js';
 
 export function NavBar(){
     return (
@@ -50,6 +51,11 @@ export function NavBar(){
                   <Link className="nav-link" to="/alldata/">
                     All Data
                   </Link>
+                </li>
+                <li className="nav-item active">
+                  <button className="nav-link" onClick={logOut}>
+                    Log Out
+                  </button>
                 </li>
               </ul>
             </div>

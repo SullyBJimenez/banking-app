@@ -8,11 +8,13 @@ import { Deposit } from "./deposit.js";
 import { Withdraw } from "./withdraw.js";
 import { AllData } from "./alldata.js";
 import { NavBar } from "./navbar.js";
+import { LoginSuccess } from './loginSuccess.js';
 
 export const UserContext   = React.createContext(null);
 
 
 export function Spa(){
+    //const isLoggedIn = window.localStorage.setItem("LoggedIn")
     return (
         <BrowserRouter>
             <NavBar/>
@@ -23,6 +25,7 @@ export function Spa(){
                     <Route path="/deposit/"     exact    element={<Deposit/>}/>
                     <Route path="/withdraw/"    exact    element={<Withdraw/>}/>
                     <Route path="/alldata/"     exact    element={<AllData/>}/>
+                    <Route path="/loginSuccess/"     exact    element={<LoginSuccess/>}/>
                 </Routes>
         </BrowserRouter>
     );

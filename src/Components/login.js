@@ -1,11 +1,16 @@
 import React, {useState} from 'react';
+import { getData } from '../getData.js';
 import { Card } from './context.js';
+
+// ToDo: 
+// get name, email, balance
+// store within local storage
+// display info on screen
 
 export function Login(){
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [show, setShow] = React.useState(true);
     
     const handleSubmit = async () =>{
         const raw = {
@@ -20,7 +25,16 @@ export function Login(){
                 headers: {"Content-Type": "application/json" },
                 body: JSON.stringify(raw),
                 }
-        );
+        ).then((res) => res.json())
+        .then(async (data) => {
+          console.log(data, "user")
+          if(data.status === "ok") {
+            window.localStorage.setItem("token", data.data)
+            window.localStorage.setItem("LoggedIn", true)
+            await getData();
+            window.location.href = "../loginSuccess"
+          }
+        })
         try {
             const result = await response.json();
             console.log("Result: ", result);
@@ -30,21 +44,15 @@ export function Login(){
         } catch (error){
             console.error("Error: ", error);
         }
-        setShow(false);
+      
     }
-
-    function clearForm() {
-        setEmail("");
-        setPassword("");
-        setShow(true);
-      }
 
     return (
         <Card
         bgcolor="primary"
         header="Login"
         body={
-            show ? (
+            
                 <>
               Email address
               <br />
@@ -76,15 +84,6 @@ export function Login(){
                 Login
               </button>
             </>
-            ) : (
-                <>
-                  <h5>Login Successful</h5>
-                  <button type="submit" className="btn btn-light" onClick={clearForm}>
-                    Return to Login
-                  </button>
-                </>
-              )
-            
         }
         />
     )

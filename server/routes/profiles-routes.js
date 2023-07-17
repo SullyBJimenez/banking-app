@@ -1,5 +1,5 @@
 import express from "express";
-import profileModel from '../models/profile.js';
+import profileModel, { updateProfile } from '../models/profile.js';
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -44,7 +44,7 @@ app.post("/profile-login", async(req,res) => {
     if(!(await bcrypt.compare(password, profile.password))){
         return res.status(401).send({error: "Invalid Credentials", status: 401})
     } else {
-        const token = jwt.sign({}, JWT_SECRET)
+        const token = jwt.sign({email: profile.email}, JWT_SECRET)
         if(res.status(201)){
             return res.json({status: "ok", data: token});
         } else {
@@ -53,6 +53,38 @@ app.post("/profile-login", async(req,res) => {
     }
 
     
+})
+
+app.post("/user-details", async(req,res) => {
+    const { token } = req.body;
+    try {
+        const user = jwt.verify(token, JWT_SECRET);
+        console.log(user);
+        
+        const userEmail = user.email;
+        profileModel.findOne({email: userEmail})
+        .then((data) => {
+            res.send({status: "ok", data: data})
+        }).catch ((error) => {
+            res.send({status: "error", data: error})
+        })
+    } catch (error) {}
+})
+
+app.put("/update-balance", async(req,res) => {
+    const { token, balance } = req.body;
+    console.log("token", token)
+    console.log("balance", balance)
+    try {
+        console.log("a")
+        const user = jwt.verify(token, JWT_SECRET);
+        console.log("user", user)
+        
+        const userEmail = user.email;
+        
+       await profileModel.findOneAndUpdate({email: userEmail}, {balance: balance})
+        
+    } catch (error) {}
 })
 
 export default app;

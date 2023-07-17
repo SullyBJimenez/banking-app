@@ -9,4 +9,8 @@ const ProfileSchema = new mongoose.Schema({
 
 const Profile =  mongoose.model("Profile", ProfileSchema);
 
+export const updateProfile = (condition, update, callBack) => {
+    Profile.update(condition, update, callBack)
+}
+
 export default Profile;
