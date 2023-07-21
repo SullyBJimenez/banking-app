@@ -3,6 +3,7 @@ import { getData } from "../getData.js";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+
 const LoginMoadDiv = styled.div`
   position: absolute;
   top: 20rem;
