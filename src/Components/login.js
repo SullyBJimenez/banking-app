@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { getData } from "../getData.js";
-import { Card } from "./context.js";
 import styled from "styled-components";
-import { Link, Route } from "react-router-dom";
-import { CreateAccount } from "./createaccount.js";
+import { Link } from "react-router-dom";
 
 const LoginMoadDiv = styled.div`
   position: absolute;
@@ -42,10 +40,6 @@ const LoginButton = styled.button`
   text-align: right;
   right: 80%;
 `;
-// ToDo:
-// get name, email, balance
-// store within local storage
-// display info on screen
 
 export function Login({ setIsOpen }) {
   const [email, setEmail] = useState("");

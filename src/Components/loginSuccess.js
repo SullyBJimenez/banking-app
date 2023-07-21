@@ -10,7 +10,6 @@ export function LoginSuccess() {
         setBalance(localStorage.getItem('balance'))
     },)
     
-    console.log("loginsucess name", name)
     return (
         <Card
         bgcolor="primary"

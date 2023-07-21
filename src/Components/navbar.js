@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { logOut } from "../logOut.js";
 import styled from "styled-components";
 import { Login } from "./login.js";
-import bank from "./bank.png"
+import bank from "../images/bank.png"
 
 const LoginAndLogout = styled.li`
   right: 5px;

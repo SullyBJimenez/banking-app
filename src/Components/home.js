@@ -1,7 +1,7 @@
 import { Card } from "./context.js";
-import piggy from "./piggy.jpg";
-import computer from "./computer.jpg";
-import plant from "./plant.jpg";
+import piggy from "../images/piggy.jpg";
+import computer from "../images/computer.jpg";
+import plant from "../images/plant.jpg";
 import styled from "styled-components";
 
 const ImageStyle = styled.img`
@@ -11,7 +11,6 @@ const ImageStyle = styled.img`
   border-style: solid;
   border-radius: 30px;
 `;
-
 
 export function Home() {
   return (
