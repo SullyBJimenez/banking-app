@@ -47,7 +47,7 @@ export function CreateAccount() {
 
     try {
       const response = await fetch(
-        "http://localhost:2020/profile",
+        "https://main.d255e4loymenhv.amplifyapp.com/profile",
         {
           method: "POST",
           mode: "cors",
