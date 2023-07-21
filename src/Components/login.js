@@ -51,7 +51,7 @@ export function Login({ setIsOpen }) {
       email,
       password,
     };
-    const response = await fetch("http://localhost:2020/profile-login", {
+    const response = await fetch("https://main.d255e4loymenhv.amplifyapp.com/profile-login", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },

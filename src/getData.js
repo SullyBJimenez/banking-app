@@ -2,7 +2,7 @@
 export const getData = async () => {
 
     await fetch(
-    "http://localhost:2020/user-details",
+    "https://main.d255e4loymenhv.amplifyapp.com/user-details",
         {
         method: "POST",
         mode: "cors",
