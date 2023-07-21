@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const MainDiv = styled.div.attrs(props => ({
     title: props.title
 }))`
-max-width: 18rem;
+max-width: 100%;
 height: inherit;
 background-color: ${props => props.bgcolor}};
 `

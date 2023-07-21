@@ -1,5 +1,5 @@
 import express from "express";
-import profileModel, { updateProfile } from '../models/profile.js';
+import profileModel from '../models/profile.js';
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
