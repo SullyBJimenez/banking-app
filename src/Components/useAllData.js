@@ -9,8 +9,6 @@ export const useAllData = (action, amount) => {
         localStorage.setItem('pageValue', JSON.stringify(page))
     }, [page])
 
-   console.log('page', page)
-
 return {
     setPage,
     page

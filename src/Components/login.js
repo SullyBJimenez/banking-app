@@ -59,7 +59,6 @@ export function Login({ setIsOpen }) {
     })
       .then((res) => res.json())
       .then(async (data) => {
-        console.log(data, "user");
         if (data.status === "ok") {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);

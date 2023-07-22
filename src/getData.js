@@ -12,7 +12,6 @@ export const getData = async () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log("userdata", data.data.name);
             window.localStorage.setItem("email", data.data.email)
             window.localStorage.setItem("balance", data.data.balance)
             window.localStorage.setItem("name", data.data.name)

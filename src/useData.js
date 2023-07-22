@@ -35,8 +35,6 @@ export const useData = (isDeposit) => {
           return window.alert("Please enter a positive number");
         }
         const depositTotal = +balance + +deposit;
-        console.log("balance total", balance)
-        console.log("deposit total", depositTotal)
         setBalance(depositTotal);
   
         localStorage.setItem("balance", JSON.stringify(depositTotal));
