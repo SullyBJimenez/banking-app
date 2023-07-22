@@ -47,7 +47,7 @@ export function CreateAccount() {
 
     try {
       const response = await fetch(
-        "https://main.d255e4loymenhv.amplifyapp.com/profile",
+        "https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/profile",
         {
           method: "POST",
           mode: "cors",

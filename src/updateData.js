@@ -1,5 +1,5 @@
 export const updateData = async () => {
-  await fetch("https://localhost:2020/update-balance", {
+  await fetch("https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/update-balance", {
     method: "PUT",
     mode: "cors",
     headers: { "Content-Type": "application/json" },

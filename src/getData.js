@@ -2,7 +2,7 @@
 export const getData = async () => {
 
     await fetch(
-    "https://main.d255e4loymenhv.amplifyapp.com/user-details",
+    "https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/user-details",
         {
         method: "POST",
         mode: "cors",
