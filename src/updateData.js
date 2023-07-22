@@ -1,5 +1,5 @@
 export const updateData = async () => {
-  await fetch("https://main.d255e4loymenhv.amplifyapp.com/update-balance", {
+  await fetch("https://localhost:2020/update-balance", {
     method: "PUT",
     mode: "cors",
     headers: { "Content-Type": "application/json" },
