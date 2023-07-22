@@ -63,7 +63,7 @@ export function Login({ setIsOpen }) {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
           await getData();
-          window.location.href = "https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/loginSuccess";
+          window.location.href = "https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/loginSuccess/";
         }
       });
     try {
