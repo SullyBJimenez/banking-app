@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { LogOut } from "../logOut.js";
+import { logOut } from "../logOut.js";
 import styled from "styled-components";
 import { Login } from "./login.js";
 import bank from "../images/bank.png"
@@ -65,7 +65,7 @@ export function NavBar() {
                   <LoginAndLogout className="nav-item active">
                     <NameStyle>
                       Hello {name+ '   '}, 
-                    <LogoutButtonStyle className="nav-link" onClick={LogOut}>
+                    <LogoutButtonStyle className="nav-link" onClick={logOut}>
                       {'   '}Log Out?
                     </LogoutButtonStyle>
                       </NameStyle>
