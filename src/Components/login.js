@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getData } from "../getData.js";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom"
 
 const LoginMoadDiv = styled.div`
   position: absolute;
@@ -45,6 +45,7 @@ const LoginButton = styled.button`
 export function Login({ setIsOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     const raw = {
@@ -63,7 +64,7 @@ export function Login({ setIsOpen }) {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
           await getData();
-          window.location.href("/loginSuccess/");
+          navigate('/loginSuccess/');
         }
       });
     try {
