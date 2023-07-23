@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getData } from "../getData.js";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
