@@ -63,7 +63,7 @@ export function Login({ setIsOpen }) {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
           await getData();
-          window.location.assign("/loginSuccess/");
+          window.location.href("/loginSuccess/");
         }
       });
     try {
