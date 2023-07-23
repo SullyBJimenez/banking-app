@@ -45,7 +45,6 @@ const LoginButton = styled.button`
 export function Login({ setIsOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [webpage, setWebpage] = useState('')
 
   const handleSubmit = async () => {
     const raw = {
@@ -64,7 +63,7 @@ export function Login({ setIsOpen }) {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
           await getData();
-          window.location.assign("https://sully-jimenezfullstackbankingapplication.onrender.com/loginSuccess/");
+          window.location.assign("/loginSuccess/");
         }
       });
     try {

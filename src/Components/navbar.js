@@ -65,7 +65,7 @@ export function NavBar() {
                   <LoginAndLogout className="nav-item active">
                     <NameStyle>
                       Hello {name+ '   '}, 
-                    <LogoutButtonStyle className="nav-link" onClick={logOut}>
+                    <LogoutButtonStyle className="nav-link" onClick={logOut} to="/home/">
                       {'   '}Log Out?
                     </LogoutButtonStyle>
                       </NameStyle>

@@ -2,5 +2,5 @@
 export const logOut = () => {
     window.localStorage.setItem("loggedIn", false)
     window.localStorage.clear();
-    window.location.assign("https://sully-jimenezfullstackbankingapplication.onrender.com/home/")
+    //window.location.assign("/")
 }
