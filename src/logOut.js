@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
 
-export const LogOut = () => {
-    const navigate = useNavigate();
-
+export const logOut = () => {
     window.localStorage.setItem("loggedIn", false)
     window.localStorage.clear();
-    navigate("/home/")
+    window.location.href("/home/")
 }
