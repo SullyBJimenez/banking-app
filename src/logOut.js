@@ -8,11 +8,11 @@ const LogoutButtonStyle = styled.button`
 
 export function LogOut({setIsLoggedIn}) {
   const navigate = useNavigate();
-
-  const navigateAndLogout = () => {
-    window.localStorage.setItem("loggedIn", false);
-    window.localStorage.clear();
-    setIsLoggedIn(false)
+  
+  const navigateAndLogout = async () => {
+      window.localStorage.setItem("loggedIn", false);
+      window.localStorage.clear();
+      await setIsLoggedIn(false)
     navigate("/home/");
   };
 
