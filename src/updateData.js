@@ -1,4 +1,4 @@
-import { render } from "./helpers";
+import { render } from "./helpers.js";
 
 export const updateData = async () => {
   const url = render
