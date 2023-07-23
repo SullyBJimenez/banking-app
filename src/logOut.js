@@ -1,14 +1,24 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-export function LogOut() {
-    const navigate = useNavigate();
 
-    const logout = () => {
-        window.localStorage.setItem("loggedIn", false)
-        window.localStorage.clear();
-        navigate("/home/")
-    }
+const LogoutButtonStyle = styled.button`
+  display: contents;
+`
 
-    logout()
-   
+export function LogOut({setIsLoggedIn}) {
+  const navigate = useNavigate();
+
+  const navigateAndLogout = () => {
+    window.localStorage.setItem("loggedIn", false);
+    window.localStorage.clear();
+    setIsLoggedIn(false)
+    navigate("/home/");
+  };
+
+  return (
+    <LogoutButtonStyle type="submit" onClick={navigateAndLogout}>
+      {' '}Logout?
+    </LogoutButtonStyle>
+  );
 }

@@ -1,5 +1,9 @@
+import { render } from "./helpers";
+
 export const updateData = async () => {
-  await fetch("https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/update-balance", {
+  const url = render
+
+  await fetch(url+"update-balance", {
     method: "PUT",
     mode: "cors",
     headers: { "Content-Type": "application/json" },

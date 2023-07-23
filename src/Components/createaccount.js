@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { render } from "../helpers.js";
 import { Card } from "./context.js";
 
 export function CreateAccount() {
@@ -44,10 +45,12 @@ export function CreateAccount() {
       name,
       password,
     };
+    const url = render;
+
 
     try {
       const response = await fetch(
-        "https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/profile",
+        url+"profile",
         {
           method: "POST",
           mode: "cors",

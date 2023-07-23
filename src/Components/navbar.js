@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LogOut } from "../logOut.js";
 import styled from "styled-components";
@@ -20,14 +20,15 @@ const NameStyle = styled.span`
   display: inline-flex;
 `
 
-const LogoutButtonStyle = styled.button`
-  display: contents;
-`
-
 export function NavBar() {
-  const isLoggedIn = window.localStorage.getItem("loggedIn");
-  const name = window.localStorage.getItem("name")
+  const [isLoggedIn, setIsLoggedIn] = useState()
   const [isOpen, setIsOpen] = useState(false);
+  const name = window.localStorage.getItem("name")
+  const loggedInLocalStorage = window.localStorage.getItem("loggedIn")
+
+  useEffect(() => {
+    setIsLoggedIn(window.localStorage.getItem("loggedIn"))
+  }, [loggedInLocalStorage])
 
   return (
     <>
@@ -65,9 +66,9 @@ export function NavBar() {
                   <LoginAndLogout className="nav-item active">
                     <NameStyle>
                       Hello {name+ '   '}, 
-                    <LogoutButtonStyle className="nav-link" onClick={LogOut()}>
-                      {'   '}Log Out?
-                    </LogoutButtonStyle>
+                    <LogOut setIsLoggedIn={setIsLoggedIn}>
+
+                    </LogOut>
                       </NameStyle>
                   </LoginAndLogout>
                 </>

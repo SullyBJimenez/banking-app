@@ -3,6 +3,7 @@ import { getData } from "../getData.js";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+import { render } from "../helpers.js";
 
 const LoginMoadDiv = styled.div`
   position: absolute;
@@ -52,7 +53,9 @@ export function Login({ setIsOpen }) {
       email,
       password,
     };
-    const response = await fetch("https://sully-jimenezfullstackbankingapplication-ttsi.onrender.com/profile-login", {
+    const url = render
+
+    const response = await fetch(`${url}profile-login`, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
@@ -64,6 +67,7 @@ export function Login({ setIsOpen }) {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
           await getData();
+          setIsOpen(false)
           navigate('/loginSuccess/');
         }
       });
