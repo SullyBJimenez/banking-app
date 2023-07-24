@@ -1,3 +1,7 @@
-# banking-app
-
-This is the front end of my project.
+Project Title: 
+Description/Motivation: 
+Installation Guidelines: 
+Screenshots: 
+Technology used: 
+Features: 
+License: 
